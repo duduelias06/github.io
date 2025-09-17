@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emagrecimento Rápido e Fácil | E-book + Grupo VIP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --primary-dark: #27ae60;
+            --secondary: #3498db;
+            --secondary-dark: #2980b9;
+            --light: #f9f9f9;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(46, 204, 113, 0.4);
+        }
+        
+        .btn-large {
+            padding: 18px 36px;
+            font-size: 1.2rem;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(46, 204, 113, 0.2) 100%);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            animation: fadeIn 1s ease;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--dark);
+            animation: fadeIn 1.2s ease;
+        }
+        
+        /* Benefits Section */
+        #beneficios {
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: var(--dark);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .benefit-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Social Proof */
+        #prova {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .testimonial {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: """;
+            font-size: 4rem;
+            color: var(--primary);
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background-color: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+        }
+        
+        /* Offer Section */
+        #oferta {
+            background-color: var(--white);
+            text-align: center;
+        }
+        
+        .offer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ebook-cover {
+            width: 200px;
+            height: 280px;
+            background-color: var(--secondary);
+            border-radius: 10px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .bonus {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        /* About Section */
+        #sobre {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .author-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            background-color: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-cta {
+            margin-bottom: 40px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .offer-container {
+                padding: 30px 20px;
+            }
+            
+            .btn-large {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>🔥 Emagreça Rápido e Fácil com Nosso Método Exclusivo!</h1>
+                <p>Aprenda estratégias simples e eficazes para perder peso sem complicações.</p>
+                <a href="#oferta" class="btn btn-large">Quero Garantir Minha Vaga</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios">
+        <div class="container">
+            <h2 class="section-title">Benefícios do Nosso Método</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">✅</div>
+                    <h3>Método Prático e Acessível</h3>
+                    <p>Um passo a passo simples que qualquer pessoa pode seguir, mesmo com a rotina mais corrida.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🍎</div>
+                    <h3>Cardápios Fáceis e Saudáveis</h3>
+                    <p>Receitas deliciosas e nutritivas que não exigem ingredientes caros ou difíceis de encontrar.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">💪</div>
+                    <h3>Exercícios Rápidos para Casa</h3>
+                    <p>Treinos eficientes de 15 a 20 minutos que não exigem equipamentos especiais.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Resultados Comprovados</h3>
+                    <p>Método testado e aprovado por centenas de pessoas que alcançaram seus objetivos.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#oferta" class="btn">Quero o E-book Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section id="prova">
+        <div class="container">
+            <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+            <div class="testimonials">
+                <div class="testimonial fade-in">
+                    <div class="testimonial-text">
+                        Perdi 12kg em apenas 3 meses seguindo o método! Finalmente consegui voltar a usar minhas roupas favoritas e recuperar a autoestima.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">C</div>
+                        <div>
+                            <strong>Carolina Silva</strong>
+                            <p>32 anos, São Paulo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="testimonial-text">
+                        Sempre lutei contra a balança, mas este método diferente tudo que já tentei. As receitas são fáceis e os exercícios rápidos se encaixam perfeitamente na minha rotina.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div>
+                            <strong>Marcos Oliveira</strong>
+                            <p>41 anos, Rio de Janeiro</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="testimonial-text">
+                        O grupo VIP no Telegram fez toda a diferença! A motivação diária e o suporte da comunidade me mantiveram no caminho certo. Já perdi 8kg em 2 meses!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div>
+                            <strong>Amanda Costa</strong>
+                            <p>28 anos, Belo Horizonte</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#oferta" class="btn">Quero Transformar Meu Corpo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section id="oferta">
+        <div class="container">
+            <div class="offer-container fade-in">
+                <h2 class="section-title">Oferta Exclusiva</h2>
+                <div class="ebook-cover">E-book<br>Emagrecimento<br>Rápido</div>
+                <h3>Adquira agora o e-book "Emagrecimento Rápido e Fácil" e receba como bônus:</h3>
+                
+                <div class="bonus">
+                    <h4>🚀 Acesso ao Grupo VIP no Telegram por 3 meses grátis!	</h4>
+                    <p>Dicas exclusivas, suporte direto e uma comunidade motivada para te acompanhar na jornada de emagrecimento!</p>
+                </div>
+                
+                <p>De <s>R$ 67,00</s> por apenas:</p>
+                <div class="price">R$ 29,99</div>
+                <p>Pagamento único • Acesso imediato</p>
+                
+                <a href="https://pay.kirvano.com/eac24f80-95be-4852-8b32-5c8d023d754c" class="btn btn-large">Garantir Acesso Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre">
+        <div class="container">
+            <div class="about-content fade-in">
+                <div class="author-image">DR</div>
+                <h2 class="section-title">Sobre o Especialista</h2>
+                <p>Dr. Rafael Mendes é nutricionista especializado em emagrecimento saudável, com mais de 10 anos de experiência e mais de 2.000 pacientes atendidos. Formado pela USP e pós-graduado em Nutrição Esportiva, desenvolveu um método único que combina alimentação inteligente com exercícios eficientes para resultados duradouros.</p>
+                <p>Seu objetivo é descomplicar o processo de emagrecimento, tornando-o acessível para pessoas comuns que desejam transformar seus corpos e sua saúde sem dietas malucas ou exercícios extenuantes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-cta">
+                <h3>Pronto para transformar seu corpo e sua saúde?</h3>
+                <a href="https://pay.kirvano.com/eac24f80-95be-4852-8b32-5c8d023d754c" class="btn btn-large">Quero Emagrecer Agora</a>
+            </div>
+            
+            
+            <p class="copyright">© 2023 Emagrecimento Rápido e Fácil. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animação de scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animação de aparecimento ao scroll
+        function checkFade() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', checkFade);
+    </script>
+</body>
+</html>		
